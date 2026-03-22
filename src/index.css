@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #0ea5e9;
+    --primary-dark: #0284c7;
+    --primary-light: #38bdf8;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --bg: #f0f9ff;
+    --card: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e0e7ff;
+  }
+
+  .dark {
+    --primary: #38bdf8;
+    --primary-dark: #0ea5e9;
+    --primary-light: #7dd3fc;
+    --success: #34d399;
+    --warning: #fbbf24;
+    --danger: #f87171;
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f1f5f9;
+    --text-muted: #cbd5e1;
+    --border: #334155;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100vh;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+
+  a { 
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--primary-dark);
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track { 
+    background: #e0f2fe;
+  }
+
+  *::-webkit-scrollbar-thumb { 
+    background: linear-gradient(180deg, #0ea5e9, #0284c7);
+    border-radius: 999px;
+    transition: background 0.2s ease;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #0284c7, #0369a1);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 px-4 py-2 text-white font-medium hover:from-blue-600 hover:to-cyan-600 transition-all shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply rounded-lg border-2 border-blue-300 px-4 py-2 text-blue-600 font-medium hover:bg-blue-50 transition-all;
+  }
+
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-all;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border-2 border-slate-200 px-4 py-2.5 font-medium outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+  }
+
+  .badge-success {
+    @apply inline-block rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800;
+  }
+
+  .badge-warning {
+    @apply inline-block rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-800;
+  }
+
+  .badge-danger {
+    @apply inline-block rounded-full bg-red-100 px-3 py-1 text-sm font-medium text-red-800;
+  }
+}
+
